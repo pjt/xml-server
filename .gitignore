@@ -1,0 +1,5 @@
+Manifest.txt
+pom-generated.xml
+lib
+classes
+*.jar

@@ -1,0 +1,263 @@
+/* global styles */
+body {
+   color: black;
+   background-color: ;
+   font-family: Palatino, "Palatino Linotype", Georgia, "Times New Roman", Times, serif;
+   font-size: 12pt;
+   padding: 1em;
+   margin: 1em auto;
+   width: 40em;
+   line-height: 1.4em;
+}
+/* editing styles */
+.editing { 
+   color: #d45e00; 
+   opacity: .9; 
+   font-size: 105%; 
+   /*background-color: #c1c0c7;*/
+   padding: .7em;
+   text-shadow: #777 0 1px 1px;
+}
+textarea { 
+   background: #555; 
+   color: white; 
+   font-size: 115%; 
+}
+input {
+   background: #EEE;
+   color: #999;
+   font-size: 85%;
+   border: 1px dotted #BBB;
+   margin: .5em 0 0;
+}
+input.no-match {
+   background: #D86846;
+   color: #444;
+}
+.draggable:hover {
+   cursor: move;
+}
+.dragging {
+   cursor: move;
+   opacity: .25;
+}
+.legend  { 
+   font-size: 95%; 
+   color: #888; 
+}
+.edit-parent { 
+   color: #618dd0; 
+   cursor: pointer; 
+}
+.edit-parent:hover {
+   color: #48699c;
+}
+.diff {
+   white-space: pre-wrap;
+   overflow: auto;
+   font-size: 85%;
+}
+.diff span.line {
+   display: block;
+   color: #7E8080;
+}
+.diff span.line.alt0 {
+   background: #EEF1F1; 
+}
+.diff span.line.plus {
+   color: #3745DF; /*#475DF1;*/
+}
+.diff span.line.minus {
+   color: #D75C54;
+}
+#err {
+   margin: 1em 0;
+   padding: .8em;
+   color: #AA240C;
+   background-color: #DDD;
+   text-align: center; 
+   font-size: 110%;
+   -moz-border-radius: .5em;
+   -webkit-border-radius: .5em;
+   cursor: pointer;
+}
+/* control bar styles */
+#control {
+   color: white;
+   background-color: #79879A;
+   font-family: Helvetica, sans-serif;
+   font-size: 10pt;
+   border-top: 2px solid #CCC;
+   width: 100%;
+   /*height: 2em;*/
+   padding: .3em .3em .1em;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   z-index: 1000;
+}
+#right {
+   text-align: right;
+   margin: .2em;
+}
+#control span {
+   display: inline;
+}
+#gen-instruct {
+   float: left;
+   color: #CCC;
+}
+#right > * {
+   margin-right: .3em;
+}
+a.button {
+   /*font-size: 90%;*/
+   color: white;
+   text-decoration: none;
+   background-color: #79879A;
+   border: 2px solid #FFF;
+   -moz-border-radius: .6em;
+   -webkit-border-radius: .6em;
+   padding: .1em .5em;
+}
+a.button:active, a.button:hover {
+   background-color: #5b6675;
+}
+#svn-diff {
+   background-image: url(img/page_white_code_red.png);
+   background-repeat: no-repeat;
+   background-position: 2px 1px;
+   /*background: inherit url(img/page_white_code_red.png) no-repeat fixed left;*/
+   padding-left: 20px;
+}
+#svn-ci {
+   background-image: url(img/tick.png);
+   background-repeat: no-repeat;
+   background-position: 2px 1px;
+   /*background: inherit url(img/tick.png) no-repeat fixed left;*/
+   padding-left: 20px;
+}
+
+/* TEI-in-HTML block, inline styles */
+
+span { 
+   display: block; 
+}
+
+span.tei-w,
+span.tei-reg, 
+span.tei-corr, 
+span.tei-orig, 
+span.tei-sic,
+span.tei-abbr,
+span.tei-expan,
+span.tei-choice, 
+span.tei-app,
+span.tei-rdg,
+span.tei-lem,
+span.tei-unclear,
+span.tei-persName,
+span.tei-name,
+span.tei-hi { 
+   display: inline; 
+}
+
+span.tei-lg,
+span.tei-p,
+span.tei-respStmt,
+span.tei-argument {
+   margin: .7em 0 1em;
+}
+
+span.tei-div,
+span.tei-front,
+span.tei-body,
+span.tei-back,
+span.tei-group,
+span.tei-titlePage {
+   margin: 2em 0;
+}
+
+span.tei-reg,
+span.tei-corr,
+span.tei-expan {
+   border-bottom: 1px dotted #777;
+}
+
+@media print {
+   span.tei-orig,
+   span.tei-sic,
+   span.tei-abbr {
+      color: #333 !important;
+   }
+}
+span.tei-orig, 
+span.tei-sic,
+span.tei-abbr { 
+   color: #777; 
+   font-style: italic;
+   font-size: 93%;
+}
+span.tei-orig:before,
+span.tei-sic:before {
+   content: "[";
+}
+span.tei-orig:after,
+span.tei-sic:after {
+   content: "]";
+}
+span.tei-abbr:before {
+   content: "\2329";
+}
+span.tei-abbr:after {
+   content: "\232A";
+}
+span.tei-rdg {
+   color: #992F36;
+   font-size: 96%;
+}
+span.tei-rdg:before {
+   content: "\00B7  ";
+}
+span.tei-lem {
+   border-bottom: 1px solid #444;
+}
+
+/* TEI-in-HTML special styles */
+
+span.tei-fw {
+   display: block;
+   font-size: 90%;
+   padding: .5em .25em .25em .25em;
+   color: #7b7b7b;
+   text-align: right;
+}
+span.tei-fw ~ .tei-fw {
+   padding: .25em;
+}
+span.tei-fw.teiatt-type\=head {
+   text-align: center;
+}
+span.tei-pb,
+span.tei-milestone {
+   /* What to do; how to make visible? */
+}
+
+span.tei-titlePage {
+   text-align: center;  
+   font-size: 110%;
+}
+span.tei-head {
+   text-align: center;
+   font-size: 107%;
+}
+
+span.tei-note.teiatt-place\=marg {
+	line-height: inherit;
+	font-size: 85%;
+	text-align: right;
+	clear: both;
+	float: left;
+	margin: 0 -11em 0 -12em;
+	width: 11em;
+}
